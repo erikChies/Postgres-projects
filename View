@@ -1,0 +1,7 @@
+CREATE VIEW vw_cursos_por_categoria AS SELECT classe.nome AS categoria, 
+COUNT(curso.id) AS numero_cursos
+FROM classe
+JOIN CURSO ON CURSO.ID = CLASSE.ID
+GROUP BY classe.nome;
+
+select * from vw_cursos_por_categoria;
